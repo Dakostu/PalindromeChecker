@@ -1,6 +1,6 @@
 # PalindromeChecker
 
-!(preview)[preview.png]
+![preview](preview.png)
 
 This is an efficient palindrome checker written in C, using a command-line interface. 
 
@@ -17,5 +17,5 @@ Uninstall by using "make clean".
 
     ./PalindromeChecker [Word that has to be checked]
     
-If you want to check a string, put it inbetween quotation marks.
+If you want to check a string, put it between quotation marks.
 
