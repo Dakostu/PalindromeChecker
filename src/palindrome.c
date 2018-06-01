@@ -18,23 +18,26 @@ static int checkIfOutsideAlphabet(char c) {
 }
 
 int checkIfPalindrome(char* string) {
+    
     int i;
     int isPalindrome = 1;
     int indexLeft = 0;
     int indexRight = strlen(string)-1;
+
+    char *tempString = strdup(string);
     
-    for (i = 0; i < strlen(string); ++i)
-        string[i] = tolower(string[i]);
+    for (i = 0; i < strlen(tempString); ++i)
+        tempString[i] = tolower(string[i]);
     
     while ((indexLeft <= indexRight) && isPalindrome) {
 
         // if character at current index is not valid, move index
-        while (checkIfOutsideAlphabet(string[indexLeft]) && indexLeft < strlen(string)-1) 
+        while (checkIfOutsideAlphabet(tempString[indexLeft]) && indexLeft < strlen(tempString)-1) 
             ++indexLeft;        
-        while (checkIfOutsideAlphabet(string[indexRight]) && indexRight > 0)
+        while (checkIfOutsideAlphabet(tempString[indexRight]) && indexRight > 0)
             --indexRight;
 
-        if (string[indexLeft] != string[indexRight])
+        if (tempString[indexLeft] != tempString[indexRight])
             return 0;
 
         ++indexLeft;
@@ -43,4 +46,5 @@ int checkIfPalindrome(char* string) {
     }
         
     return 1;
+    
 }
