@@ -17,7 +17,7 @@ static int checkIfOutsideAlphabet(char c) {
     return ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z'));
 }
 
-int checkIfPalindrome(char* string) {
+int checkIfPalindrome(const char* string) {
     
     int i;
     int isPalindrome = 1;
@@ -27,7 +27,7 @@ int checkIfPalindrome(char* string) {
     char *tempString = strdup(string);
     
     for (i = 0; i < strlen(tempString); ++i)
-        tempString[i] = tolower(string[i]);
+        tempString[i] = tolower(tempString[i]);
     
     while ((indexLeft <= indexRight) && isPalindrome) {
 

@@ -9,4 +9,4 @@
  * 
  */
 
-int checkIfPalindrome(char* string);
+int checkIfPalindrome(const char* string);
