@@ -7,7 +7,7 @@ This is an efficient palindrome checker written in C, using a command-line inter
 It is case-insensitive and ignores any non-English characters as well as non-numbers.
 
 
-## How to install
+## How to Install
 
 Install by using the "make" command inside the main repository folder.
 
