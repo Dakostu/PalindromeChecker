@@ -10,13 +10,10 @@
  */
 
 #include "palindrome.h"
-#include <ctype.h>
-#include <string.h>
 
 int checkIfPalindrome(const char* string) {
     
     int i;
-    int isPalindrome = 1;
     int indexLeft = 0;
     int indexRight = strlen(string)-1;
 
@@ -25,7 +22,7 @@ int checkIfPalindrome(const char* string) {
     for (i = 0; i < strlen(tempString); ++i)
         tempString[i] = tolower(tempString[i]);
     
-    while ((indexLeft <= indexRight) && isPalindrome) {
+    while ((indexLeft <= indexRight)) {
 
         // if character at current index is not valid, move index
         while (!isalnum(tempString[indexLeft]) && indexLeft < strlen(tempString)-1) 
