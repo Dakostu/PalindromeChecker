@@ -22,10 +22,10 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    char englishString[strlen(argv[1])];
-    strcpy(englishString, argv[1]);
-    
+    // Filter input string to English alphanumeric chars only
     int i;
+    char englishString[strlen(argv[1])];
+    strcpy(englishString, argv[1]);        
     for (i = 0; i < strlen(englishString); ++i) {
         if (!isalnum(englishString[i]))
             englishString[i] = ' ';
