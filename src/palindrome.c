@@ -13,10 +13,6 @@
 #include <ctype.h>
 #include <string.h>
 
-static int checkIfOutsideAlphabet(char c) {
-    return ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z'));
-}
-
 int checkIfPalindrome(const char* string) {
     
     int i;
@@ -32,9 +28,9 @@ int checkIfPalindrome(const char* string) {
     while ((indexLeft <= indexRight) && isPalindrome) {
 
         // if character at current index is not valid, move index
-        while (checkIfOutsideAlphabet(tempString[indexLeft]) && indexLeft < strlen(tempString)-1) 
+        while (!isalnum(tempString[indexLeft]) && indexLeft < strlen(tempString)-1) 
             ++indexLeft;        
-        while (checkIfOutsideAlphabet(tempString[indexRight]) && indexRight > 0)
+        while (!isalnum(tempString[indexRight]) && indexRight > 0)
             --indexRight;
 
         if (tempString[indexLeft] != tempString[indexRight])
