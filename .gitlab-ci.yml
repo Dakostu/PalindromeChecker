@@ -1,0 +1,9 @@
+stages: 
+- test 
+
+run-unit-tests:
+    stage: test
+    script:
+            - cd src
+            - g++ UnitTests.cpp palindrome.c -o Tests 
+            - ./Tests
