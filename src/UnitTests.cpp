@@ -471,8 +471,33 @@ TEST_CASE( "Check palindromes", "[PalindromeCheck]" ) {
     
     
     for (auto palindrome : palindromes) {
-        puts(palindrome);
         REQUIRE(checkIfPalindrome(palindrome) == 1);
+    }
+    
+}
+
+TEST_CASE( "No false positives", "[PalindromeCheck]" ) {
+    
+    std::vector<const char*> noPalindromes = {
+
+        "A flustered mailbox violated the sad pirate ship.",
+        "An aged racoon tickled an orca whale imperfectly.",
+        "Sue complimented a teenager.",
+        "Oh, my. A sickly Pokemon trainer mutilated an egg.",
+        "Holy sh**. A salesman devoured a milkshake.",
+        "A Klondike bar hobbled under a platform.",
+        "A clam vomited all over a lion stupidly.",
+        "Hey! Look! A lobster tackled the enraged teddy bear harmoniously.",
+        "The striped penguin ruined a tree.",
+        "A hungry librarian crept behind a Mini Cooper.",
+        "Timothy stupidly yelled at an obese street."
+        
+        
+    };
+    
+    
+    for (auto sentence : noPalindromes) {
+        REQUIRE(checkIfPalindrome(sentence) == 0);
     }
     
 }
